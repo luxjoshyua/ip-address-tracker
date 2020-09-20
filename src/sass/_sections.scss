@@ -1,0 +1,20 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/images/pattern-bg.png") no-repeat center center;
+  background-size: cover;
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 560px;
+    .heading-wrapper {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    .search-wrapper {
+    }
+  }
+}

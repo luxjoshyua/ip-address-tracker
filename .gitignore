@@ -1,2 +1,5 @@
 /node_modules
 dist/
+design/
+*.DS_Store
+.DS_Store
