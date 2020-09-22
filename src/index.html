@@ -1,27 +1,59 @@
-<!DOCTYPE html> <!--[if gt IE 8]><!-->
+<!DOCTYPE html>
+<!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
+<!--<![endif]-->
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>IP Address Tracker Challenge</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-  </head>
-  <body>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+</head>
+
+<body>
     <section class="search-container">
-      <div class="content-wrapper">
-        <div class="heading-wrapper">
-          <h1 class="heading-large">IP Address Tracker</h1>
+        <div class="content-wrapper">
+            <div class="heading-wrapper">
+                <h1 class="heading-large">IP Address Tracker</h1>
+            </div>
+            <div class="search-wrapper">
+                <input type="search" id="search" placeholder="Search for any IP address or domain">
+                <div class="search-btn"></div>
+            </div>
         </div>
-        <div class="search-wrapper"></div>
-      </div>
     </section>
-  </body>
+
+    <section class="results-container">
+        <div class="results-item">
+            <p class="heading">ip address</p>
+            <p class="result" id="ip">192.212.174.101</p>
+        </div>
+        <div class="results-item">
+            <p class="heading">location</p>
+            <p class="result" id="location">Brooklyn, NY</p>
+        </div>
+        <div class="results-item">
+            <p class="heading">timezone</p>
+            <p class="result" id="timezone">UTC -05:00</p>
+        </div>
+        <div class="results-item">
+            <p class="heading">isp</p>
+            <p class="result" id="isp">spaceX</p>
+        </div>
+    </section>
+
+
+    <section class="map-container">
+        <div class="map" id="mapid"></div>
+    </section>
+
+
+</body>
+
 </html>
