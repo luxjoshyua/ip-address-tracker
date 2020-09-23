@@ -12,13 +12,14 @@ fetch(apiURL)
     // console.log("This is what res looks like", res);
     data = res;
     setLocation(res);
+    searchFunction(res);
   })
   .catch((error) => {
     console.log("Here is our error catching", error);
   });
 
 const setLocation = (data) => {
-  console.log(data);
+  //   console.log(data);
   //   ip
   const ip = document.getElementById("ip");
   ip.innerHTML = `${data.ip}`;
@@ -31,4 +32,14 @@ const setLocation = (data) => {
   //   isp
   const isp = document.getElementById("isp");
   isp.innerHTML = `${data.isp}`;
+};
+
+const searchFunction = (data) => {
+  console.log(data);
+  const searchField = document.getElementById("search");
+
+  searchField.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(searchString);
+  });
 };
