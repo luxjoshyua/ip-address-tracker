@@ -3,7 +3,7 @@ const apiURL =
   "https://geo.ipify.org/api/v1?apiKey=at_9fxMB8QI2Vb3sMOfEWzwKyFaWsr4n";
 
 let data = [];
-console.log("loading");
+
 function queryIP(apiURL) {
   fetch(apiURL)
     .then((data) => {
@@ -43,27 +43,28 @@ const setLocation = (data) => {
   isp.innerHTML = `${data.isp}`;
 };
 
+// 45.250.160.81
+// 85.214.132.117
+
 const searchField = document.getElementById("search-field");
 const searchBtn = document.getElementById("search-btn");
 
-// check if there are 9 characters, 4 full stops in between, then run the function, otherwise break
+searchField.addEventListener("keyup", (e) => {
+  const searchString = e.target.value;
+  console.log(searchString);
 
-// searchField.addEventListener("keyup", (e) => {
-//   const searchString = e.target.value.toLowerCase();
-//   console.log(searchString);
-
-//   if (searchString.length >= 5) {
-//     queryIP(apiURL + "&ipAddress=" + searchString);
-//   }
-// });
-searchBtn.addEventListener("click", (e) => {
-  const searchString = e.target.value.toLowerCase();
-
-  console.log("click", e);
-  //   console.log(searchString);
-  queryIP(apiURL + "&ipAddress=" + searchString);
+  const regexIP = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  if (regexIP.test(searchString)) {
+    console.log("valid ip entered");
+    queryIP(apiURL + "&ipAddress=" + searchString);
+  } else {
+    console.log("invalid ip entered");
+  }
 });
 
-// separate function to validate the entered strings, match to ip
-
-function validateIpString() {}
+searchBtn.addEventListener("click", (e) => {
+  //   if the entered string is correct, run the function
+  //   if (validateIpString()) {
+  //     queryIP(apiURL + "&ipAddress=" + searchString);
+  //   }
+});
