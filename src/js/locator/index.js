@@ -1,6 +1,5 @@
 import "leaflet";
 import locationImg from "../../assets/images/icon-location.svg";
-// console.log(locationImg);
 
 const searchField = document.getElementById("search-field");
 const searchBtn = document.getElementById("search-btn");
@@ -17,7 +16,7 @@ var mymap = L.map("ipLocation").setView([lat, lng], 5);
 // custome pointer icon
 const pointer = L.icon({
   //   iconUrl: "../../assets/images/icon-location.svg",
-  iconUrl: "ff17146919959b508ee5dd9af2f9f9e5.svg",
+  iconUrl: locationImg,
   iconSize: [30, 36],
   iconAnchor: [15, 18],
 });
@@ -66,8 +65,8 @@ const ipSubmit = () => {
         }
       })
       .then((response) => {
-        //   generate and display results
-        console.log(response);
+        // generate and display results
+        // console.log(response);
         resultDataElement.innerHTML = returnDataList(response);
         resultsContainerElement.classList.add("show");
 
